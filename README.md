@@ -1,12 +1,17 @@
-instalar maven
-https://maven.apache.org/install.html
-
 instalar com
 ```bash
-mvn clean install
+mvnw clean install
+```
+ou
+```bash
+./mvnw clean install
 ```
 
 executar com
 ```bash
-mvn spring-boot:run
+mvnw spring-boot:run
+```
+ou
+```bash
+./mvnw spring-boot:run
 ```
