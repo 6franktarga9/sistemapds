@@ -1,0 +1,14 @@
+package net.apps.rsapp.repository;
+
+import java.util.List;
+import net.apps.rsapp.dto.BlocoDTO.BlocoDTO;
+import net.apps.rsapp.entity.Bloco.Bloco;
+import net.apps.rsapp.entity.Bloco.BlocoPK;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+
+public interface BlocoRepository extends JpaRepository<Bloco, BlocoPK>{
+    @Query( "SELECT NEW net.apps.rsapp.dto.BlocoDTO.BlocoDTO(b.idbloco)" + 
+            "FROM Bloco b WHERE b.siglacampi = :siglacampi")
+    List<BlocoDTO> listAllBlocosAtCampi(String siglacampi);
+}
